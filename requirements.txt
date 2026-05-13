@@ -1,0 +1,25 @@
+# Core analysis
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Football data sources
+soccerdata
+statsbombpy
+xgboost
+lightgbm
+
+# Deep learning (Phase 2+; install CPU/GPU build appropriate for your machine)
+torch
+torchvision
+torchaudio
+
+# API
+fastapi
+uvicorn[standard]
+
+# Dev / notebooks
+pytest
+jupyterlab
