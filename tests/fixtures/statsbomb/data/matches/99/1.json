@@ -1,0 +1,38 @@
+[
+  {
+    "match_id": 90001,
+    "match_date": "2018-06-01",
+    "competition": {
+      "competition_id": 99,
+      "competition_name": "Test Cup",
+      "country_name": "Test"
+    },
+    "season": { "season_id": 1, "season_name": "2018" },
+    "home_team": { "home_team_name": "Alpha FC" },
+    "away_team": { "away_team_name": "Beta FC" },
+    "home_score": 2,
+    "away_score": 1,
+    "stadium": { "name": "Test Arena" },
+    "competition_stage": { "name": "Group Stage" },
+    "neutral_ground": false,
+    "attendance": 10000
+  },
+  {
+    "match_id": 90002,
+    "match_date": "2018-06-15",
+    "competition": {
+      "competition_id": 99,
+      "competition_name": "Test Cup",
+      "country_name": "Test"
+    },
+    "season": { "season_id": 1, "season_name": "2018" },
+    "home_team": { "home_team_name": "Beta FC" },
+    "away_team": { "away_team_name": "Alpha FC" },
+    "home_score": 1,
+    "away_score": 1,
+    "stadium": { "name": "Test Arena" },
+    "competition_stage": { "name": "Group Stage" },
+    "neutral_ground": false,
+    "attendance": null
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ev-counter-1",
+    "type": { "id": 30, "name": "Pass" },
+    "minute": 3,
+    "play_pattern": { "name": "From Counter" },
+    "team": { "name": "Beta FC" },
+    "location": [ 50.0, 40.0 ],
+    "duration": 1.0,
+    "pass": { "end_location": [ 70.0, 35.0 ] }
+  }
+]

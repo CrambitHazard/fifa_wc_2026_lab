@@ -1,0 +1,18 @@
+# Week 1 — defaults (StatsBomb Open Data paths + competition ids)
+#
+# Open Data layout (auto-detected by src/data/statsbomb.py):
+#   - data/external/matches|events|lineups  (flat extract), or
+#   - data/external/statsbomb-open-data/data/...  (full clone), or
+#   - STATSBOMB_OPEN_DATA_DIR pointing at either layout
+
+statsbomb:
+  # FIFA World Cup 2018 (Men's) in public Open Data
+  competition_id: 43
+  season_id: 3
+
+paths:
+  processed_dir: "data/processed"
+
+baseline:
+  test_fraction: 0.25
+  random_state: 42

@@ -44,18 +44,42 @@ pip install -r requirements.txt
 
 Torch wheels are platform-specific; adjust index URL if you use CUDA.
 
+## Week 1 pipeline (StatsBomb + baseline)
+
+1. **Place Open Data** — clone [statsbomb/open-data](https://github.com/statsbomb/open-data) to `data/external/statsbomb-open-data`, **or** set `STATSBOMB_OPEN_DATA_DIR` to that folder. The default competition in `configs/week1.yaml` is FIFA World Cup 2018 (`competition_id: 43`, `season_id: 3`).
+
+2. **ETL to parquet** (from repo root; scripts add `src` to `sys.path` automatically):
+
+   ```bash
+   python scripts/run_week1_etl.py
+   ```
+
+   Options: `--open-data DIR`, `--competition-id N`, `--season-id M`, `--processed DIR` (override paths and ids from config—handy for local checks with the tiny `tests/fixtures/statsbomb` tree).
+
+   Outputs: `data/processed/matches.parquet`, `shots_open_play.parquet`, `penalties.parquet`, `lineups.parquet`, `team_tactical.parquet`, plus `etl_meta.json` (or the same filenames under `--processed`).
+
+3. **EDA** — open `notebooks/exploratory/week1_eda.ipynb` and run all cells (set kernel working directory to repo root or `notebooks/exploratory`; the notebook resolves `REPO` accordingly).
+
+4. **Baseline match model** (chronological holdout, logistic regression + XGBoost if installed):
+
+   ```bash
+   python scripts/train_baseline.py
+   ```
+
+5. **Optional FBref** — `src/data/soccerdata_fbref.py` exposes `try_read_fbref_team_season_shooting()` (network + `soccerdata`); use as a second source after the unified schema is stable.
+
 ## Tests
 
 ```bash
 pytest
 ```
 
-`pyproject.toml` sets `pythonpath = ["src"]` so packages `data` and `models` resolve cleanly.
+`pyproject.toml` sets `pythonpath = ["src"]` so packages `data`, `features`, and `models` resolve cleanly.
 
-## Data sources (Task B)
+## Data sources
 
 - [StatsBomb Open Data](https://github.com/statsbomb/open-data)
 - [soccerdata](https://soccerdata.readthedocs.io)
 - [FBref](https://fbref.com)
 
-Goal: matches, shots, lineups, penalties in pandas, aligned to `schemas.py`.
+Goal: matches, shots, lineups, and penalties in pandas, aligned to `schemas.py`.

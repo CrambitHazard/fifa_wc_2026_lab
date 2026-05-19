@@ -1,0 +1,47 @@
+[
+  {
+    "team_id": 1,
+    "team_name": "Alpha FC",
+    "lineup": [
+      {
+        "player_id": 101,
+        "player_name": "Keeper A",
+        "jersey_number": 1,
+        "positions": [
+          {
+            "position": "Goalkeeper",
+            "start_reason": "Starting XI"
+          }
+        ]
+      },
+      {
+        "player_id": 102,
+        "player_name": "Striker A",
+        "jersey_number": 9,
+        "positions": [
+          {
+            "position": "Center Forward",
+            "start_reason": "Starting XI"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "team_id": 2,
+    "team_name": "Beta FC",
+    "lineup": [
+      {
+        "player_id": 201,
+        "player_name": "Keeper B",
+        "jersey_number": 1,
+        "positions": [
+          {
+            "position": "Goalkeeper",
+            "start_reason": "Starting XI"
+          }
+        ]
+      }
+    ]
+  }
+]

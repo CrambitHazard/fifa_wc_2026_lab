@@ -4,6 +4,8 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+pyarrow
+PyYAML
 
 # Football data sources
 soccerdata

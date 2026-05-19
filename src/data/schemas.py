@@ -135,6 +135,28 @@ PENALTY_COLUMNS: Final[tuple[str, ...]] = (
     PEN_COMPETITION,
 )
 
+# ---------------------------------------------------------------------------
+# Lineup table (one row per player registered for the match)
+# ---------------------------------------------------------------------------
+
+LINEUP_MATCH_ID: Final[str] = "match_id"
+LINEUP_TEAM: Final[str] = "team"
+LINEUP_PLAYER_ID: Final[str] = "player_id"
+LINEUP_PLAYER: Final[str] = "player"
+LINEUP_POSITION: Final[str] = "position"
+LINEUP_STARTER: Final[str] = "starter"
+LINEUP_JERSEY: Final[str] = "jersey_number"
+
+LINEUP_COLUMNS: Final[tuple[str, ...]] = (
+    LINEUP_MATCH_ID,
+    LINEUP_TEAM,
+    LINEUP_PLAYER_ID,
+    LINEUP_PLAYER,
+    LINEUP_POSITION,
+    LINEUP_STARTER,
+    LINEUP_JERSEY,
+)
+
 
 @dataclass(frozen=True)
 class MatchRow:

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from data.schemas import (
+    LINEUP_COLUMNS,
     MATCH_COLUMNS,
     PENALTY_COLUMNS,
     SHOT_COLUMNS,
@@ -35,3 +36,8 @@ def test_shot_columns_unique() -> None:
 def test_penalty_columns_unique() -> None:
     """Penalty contract supports specialist models later."""
     _assert_unique(PENALTY_COLUMNS)
+
+
+def test_lineup_columns_unique() -> None:
+    """Lineup contract supports joining to events later."""
+    _assert_unique(LINEUP_COLUMNS)

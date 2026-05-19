@@ -1,0 +1,55 @@
+[
+  {
+    "id": "ev-pass-1",
+    "type": { "id": 30, "name": "Pass" },
+    "minute": 1,
+    "team": { "name": "Alpha FC" },
+    "player": { "name": "Player A" },
+    "location": [ 60.0, 40.0 ],
+    "duration": 2.5,
+    "pass": {
+      "end_location": [ 75.0, 38.0 ],
+      "length": 18.0
+    }
+  },
+  {
+    "id": "shot-open-1",
+    "type": { "id": 16, "name": "Shot" },
+    "minute": 12,
+    "team": { "name": "Alpha FC" },
+    "player": { "name": "Striker A" },
+    "location": [ 100.0, 38.0 ],
+    "duration": 0.9,
+    "under_pressure": true,
+    "shot": {
+      "statsbomb_xg": 0.12,
+      "outcome": { "name": "Goal" },
+      "body_part": { "name": "Right Foot" },
+      "type": { "name": "Open Play" },
+      "key_pass_id": "kp-1"
+    }
+  },
+  {
+    "id": "shot-pen-1",
+    "type": { "id": 16, "name": "Shot" },
+    "minute": 55,
+    "team": { "name": "Beta FC" },
+    "player": { "name": "Penalty Taker" },
+    "location": [ 102.0, 40.0 ],
+    "duration": 1.2,
+    "shot": {
+      "statsbomb_xg": 0.76,
+      "outcome": { "name": "Saved" },
+      "body_part": { "name": "Right Foot" },
+      "type": { "name": "Penalty" },
+      "end_location": [ 120.0, 36.0 ],
+      "freeze_frame": [
+        {
+          "teammate": false,
+          "player": { "name": "Goalie A" },
+          "position": { "name": "Goalkeeper" }
+        }
+      ]
+    }
+  }
+]
