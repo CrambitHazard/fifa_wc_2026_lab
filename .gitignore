@@ -39,3 +39,6 @@ reports/*
 .env
 .env.*
 scratch
+
+data
+downloaded_files

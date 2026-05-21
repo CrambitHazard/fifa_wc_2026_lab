@@ -30,6 +30,24 @@
     }
   },
   {
+    "id": "press-1",
+    "type": { "id": 17, "name": "Pressure" },
+    "minute": 8,
+    "team": { "name": "Alpha FC" },
+    "possession_team": { "name": "Beta FC" },
+    "location": [ 55.0, 40.0 ],
+    "duration": 0.4
+  },
+  {
+    "id": "recover-1",
+    "type": { "id": 2, "name": "Ball Recovery" },
+    "minute": 8,
+    "team": { "name": "Alpha FC" },
+    "possession_team": { "name": "Alpha FC" },
+    "location": [ 58.0, 41.0 ],
+    "duration": 0.3
+  },
+  {
     "id": "shot-pen-1",
     "type": { "id": 16, "name": "Shot" },
     "minute": 55,

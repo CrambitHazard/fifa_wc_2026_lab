@@ -1,0 +1,27 @@
+# Phase 2 — Tactical Intelligence Engine
+#
+# scope: mens_senior_national | national | world_cup | all
+#   mens_senior_national — men's senior intl tournaments (Euro, Copa, AFCON, WC, …)
+#   world_cup            — men's FIFA World Cup only (small-N diagnostic)
+#
+# Train on the broad men's senior pool; evaluate with wc_holdout_2022 to mimic
+# predicting a future World Cup from other international tournaments.
+
+scope: mens_senior_national
+
+paths:
+  processed_dir: "data/processed_mens_national"
+  reports_dir: "reports"
+
+tactical:
+  profile_window: 5
+  n_clusters: 5
+  random_state: 42
+
+ablation:
+  eval_mode: wc_holdout_2022
+  secondary_eval_mode: chronological
+  test_fraction: 0.25
+  run_feature_ablation: true
+  walk_forward_folds: 5
+  min_train_matches: 40

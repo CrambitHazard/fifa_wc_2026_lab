@@ -1,0 +1,42 @@
+# Multi-source ingestion (club + national). For WC 2026 work prefer:
+#   configs/data_sources_national.yaml  OR  scripts/build_wc_stack.py
+
+scope: all
+
+statsbomb_open_data:
+  # Extra Open Data competitions (beyond WC 2018 in week1.yaml).
+  auto_discover: true
+  exclude_competitions:
+    - competition_id: 43
+      season_id: 3
+    - competition_id: 43
+      season_id: 106
+  # Or pin explicit tuples [competition_id, season_id]:
+  extra: []
+
+fbref_soccerdata:
+  enabled: true
+  leagues:
+    - "ENG-Premier League"
+    - "ESP-La Liga"
+    - "ITA-Serie A"
+    - "GER-Bundesliga"
+    - "FRA-Ligue 1"
+    - "INT-European Championship"
+    - "INT-Women's World Cup"
+  seasons:
+    - "2324"
+    - "2223"
+  competition_labels:
+    "ENG-Premier League": "ENG Premier League 23/24"
+    "ESP-La Liga": "ESP La Liga 23/24"
+    "ITA-Serie A": "ITA Serie A 23/24"
+    "GER-Bundesliga": "GER Bundesliga 23/24"
+    "FRA-Ligue 1": "FRA Ligue 1 23/24"
+    "INT-European Championship": "UEFA Euro 2024"
+    "INT-Women's World Cup": "WWC 2023"
+
+paths:
+  processed_wc: "data/processed"
+  processed_unified: "data/processed_unified"
+  fbref_cache: "data/external/fbref_cache"

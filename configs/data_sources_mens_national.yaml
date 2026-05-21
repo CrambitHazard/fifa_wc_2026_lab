@@ -1,0 +1,65 @@
+# Men's senior national-team tournaments (train pool for WC 2026 prediction)
+# Use: python scripts/build_unified_dataset.py --config configs/data_sources_mens_national.yaml
+
+scope: mens_senior_national
+
+statsbomb_open_data:
+  auto_discover: true
+  exclude_competitions: []
+  extra: []
+
+openfootball:
+  enabled: true
+  min_year: 2018
+  tournaments:
+    - fifa_world_cup
+    - uefa_euro
+    - copa_america
+    - african_cup_of_nations
+    - uefa_nations_league
+    - concacaf_nations_league
+    - gold_cup
+    - afc_asian_cup
+    - friendly
+  cache_dir: "data/external/openfootball_cache"
+
+api_football:
+  enabled: false
+  fetch_statistics: true
+  skip_statsbomb_statistics: true
+  # Free tier ~100 req/day; cached responses are reused on reruns.
+  max_statistics_fixtures: 95
+  cache_dir: "data/external/api_football_cache"
+  leagues:
+    - id: 1
+      name: "FIFA World Cup"
+      seasons: [2018, 2022]
+    - id: 4
+      name: "UEFA Euro"
+      seasons: [2020, 2024]
+    - id: 9
+      name: "Copa America"
+      seasons: [2021, 2024]
+    - id: 6
+      name: "Africa Cup of Nations"
+      seasons: [2021, 2023]
+    - id: 5
+      name: "UEFA Nations League"
+      seasons: [2020, 2022, 2024]
+    - id: 10
+      name: "International Friendly"
+      seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024]
+    - id: 22
+      name: "CONCACAF Gold Cup"
+      seasons: [2019, 2021, 2023]
+    - id: 886
+      name: "AFC Asian Cup"
+      seasons: [2019, 2023]
+
+fbref_soccerdata:
+  enabled: false
+
+paths:
+  processed_wc: "data/processed_all"
+  processed_unified: "data/processed_mens_national"
+  fbref_cache: "data/external/fbref_cache"

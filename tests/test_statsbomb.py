@@ -60,6 +60,14 @@ def test_resolve_flat_open_data_layout() -> None:
     assert (data_dir / "matches" / "99" / "1.json").is_file()
 
 
+def test_matches_path_flat_layout() -> None:
+    """Open Data under external/ without nested data/ folder."""
+    from data.statsbomb import matches_path
+
+    p = matches_path(FIXTURE_ROOT, 99, 1)
+    assert p.is_file()
+
+
 def test_raw_match_competition_string() -> None:
     """Smoke test helper used by the pipeline."""
     import json

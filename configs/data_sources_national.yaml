@@ -1,0 +1,33 @@
+# National-team tournaments only (for WC 2026 prediction lab)
+# Use: python scripts/build_unified_dataset.py --config configs/data_sources_national.yaml
+
+scope: national
+
+statsbomb_open_data:
+  auto_discover: true
+  # WC 2018/2022 are added via build_wc_stack.py / processed_all — avoid duplicates here
+  exclude_competitions:
+    - competition_id: 43
+      season_id: 3
+    - competition_id: 43
+      season_id: 106
+  extra: []
+
+fbref_soccerdata:
+  enabled: true
+  leagues:
+    - "INT-European Championship"
+    - "INT-World Cup"
+    - "INT-Women's World Cup"
+  seasons:
+    - "2324"
+    - "2223"
+  competition_labels:
+    "INT-European Championship": "UEFA Euro 2024"
+    "INT-World Cup": "FIFA World Cup"
+    "INT-Women's World Cup": "WWC 2023"
+
+paths:
+  processed_wc: "data/processed"
+  processed_unified: "data/processed_national"
+  fbref_cache: "data/external/fbref_cache"

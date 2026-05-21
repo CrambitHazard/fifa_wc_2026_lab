@@ -128,6 +128,15 @@ def lineups_path(open_data_root: Path, match_id: int) -> Path:
     return base / "lineups" / f"{match_id}.json"
 
 
+def competitions_catalog_path(open_data_root: Path) -> Path:
+    """Path to ``competitions.json`` (repo root or nested ``data/``)."""
+    root = open_data_root.resolve()
+    flat = root / "competitions.json"
+    if flat.is_file():
+        return flat
+    return root / "data" / "competitions.json"
+
+
 def load_matches_file(path: Path) -> list[dict[str, Any]]:
     """Load a StatsBomb matches JSON array.
 

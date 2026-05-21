@@ -12,6 +12,8 @@ requires-python = ">=3.10"
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+# soccerdata pulls in seleniumbase's pytest plugin (breaks on Windows latest_logs/)
+addopts = "-p no:seleniumbase"
 
 [tool.ruff]
 line-length = 100

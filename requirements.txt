@@ -6,9 +6,12 @@ matplotlib
 seaborn
 pyarrow
 PyYAML
+umap-learn
 
 # Football data sources
 soccerdata
+requests
+python-dotenv
 statsbombpy
 xgboost
 lightgbm
